@@ -19,14 +19,28 @@ document.getElementById("loadData").addEventListener("click", function () {
 
       let headerRow = data[0];
       let rollNumberIndex = headerRow.indexOf("Roll no");
+      let normalizedRollNumberInput = rollNumberInput
+        .replace(/\s+/g, "")
+        .toLowerCase();
 
       // Find the row corresponding to the entered roll number
-      let rowToDisplay = data.find(
-        (row) =>
-          (isNaN(rollNumber) && row[rollNumberIndex] === rollNumber) || // Alphanumeric check
-          (!isNaN(rollNumber) && parseInt(row[rollNumberIndex]) === rollNumber) // Numeric check
-      );
+      // let rowToDisplay = data.find(
+      //   (row) =>
+      //     (isNaN(rollNumber) && row[rollNumberIndex] === rollNumber) || // Alphanumeric check
+      //     (!isNaN(rollNumber) && parseInt(row[rollNumberIndex]) === rollNumber) // Numeric check
+      // );
+      let rowToDisplay = data.find((row) => {
+        let rowRollNumber = row[rollNumberIndex]
+          .toString()
+          .replace(/\s+/g, "")
+          .toLowerCase();
+        return (
+          rowRollNumber === normalizedRollNumberInput ||
+          rowRollNumber === rollNumberInput
+        );
+      });
 
+      
       if (rowToDisplay) {
         generateTableHead(table, headerRow);
         generateTableRows(table, rowToDisplay);
