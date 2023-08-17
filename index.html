@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css" />
+    <!-- <link rel="stylesheet" href="https://drive.google.com/uc?export=download&id=1an4J505Jdr4CRBxUoYFgd_a8qLeXVnt0" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="inFormBackground">
+      <!-- <div class="circle"></div>
+            <div class="circle"></div> -->
+      <div class="inLoginForm">
+        <form onsubmit="return false">
+          <div class="title"><h3>Login Here</h3></div>
+          <div class="inputGroup">
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter Email" id="email" />
+          </div>
+          <div class="inputGroup">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter Password" id="password" />
+          </div>
+          <button class="show-password" id="showpassword">
+            Show Password
+            <i class="fa-sharp fa-solid fa-eye-slash eye-icon"></i>
+          </button>
+          <button
+            class="submitForm"
+            type="button"
+            onclick=" return validateLogin()"
+          >
+            Log In
+          </button>
+          <!-- <div class="social">
+                        <div class="go"><i class="fab fa-google"></i></div>
+                        <div class="fb"><i class="fab fa-facebook"></i></div>
+                        <div class="tw"><i class="fab fa-twitter"></i></div>
+                    </div> -->
+          <button class="forgot-button">Forgot Password?</button>
+          <button class="signup-button">Sign up</button>
+        </form>
+      </div>
+    </div>
+    <script src="login.js"></script>
+  </body>
+</html>
